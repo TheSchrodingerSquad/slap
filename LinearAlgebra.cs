@@ -4,6 +4,11 @@ using System.Text;
 using System.Text.RegularExpressions;
 
 namespace LinearAlgebra {
+    public class Constants {
+        public Matrix I = new Matrix(new double[,]{{1, 0}, {0, 1}}, true);
+    }
+
+    //stolen from google or sm idk
     public class Matrix {
         public int rows;
         public int cols;
@@ -597,8 +602,6 @@ namespace LinearAlgebra {
             return Matrix.Multiply(n, m);
         }
     }
-
-    //  The class for exceptions
     public class MException: Exception {
         public MException(string Message): base(Message) {}
     }

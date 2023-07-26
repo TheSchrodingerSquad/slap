@@ -9,10 +9,12 @@
 			"installUsingApt": true,
 			"version": "6"
 		}
-	}
+	},
+
+	"postCreateCommand": "dotnet add package Microsoft.Quantum.Chemistry"
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
-	// "features": {},
+	// "features": {"ghcr.io/devcontainers/features/dotnet:1"},
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [5000, 5001],
