@@ -8,7 +8,7 @@ namespace SLAP {
     open Microsoft.Quantum.Chemistry.JordanWigner;
     open Microsoft.Quantum.Chemistry.JordanWigner.VQE;
 
-    operation GetEnergyVQE (JWEncodedData: JordanWignerEncodingData, theta1: Double, theta2: Double, theta3: Double, nSamples: Int) : Double {
+    operation VQEGetEnergy (JWEncodedData: JordanWignerEncodingData, theta1: Double, theta2: Double, theta3: Double, nSamples: Int) : Double {
         let (nSpinOrbitals, fermionTermData, inputState, energyOffset) = JWEncodedData!;
         let (stateType, JWInputStates) = inputState;
         let inputStateParam = (
@@ -28,15 +28,6 @@ namespace SLAP {
         );
     }
 
-    operation GroundStateEnergyTest() : Unit {
-        //create hamiltonian representation of the system
-        //coefficients and nuclear repulsion for 0.75 angstrom-meters
-        let coeff = [-0.4804, 0.3435, -0.4347, 0.5716, 0.0910, 0.0910];
-        let nr = 0.7055696146;
-
-        
-    }
-
     operation Ansatz(theta : Double) : Double {
         use (q0, q1) = (Qubit(), Qubit());
         X(q0);
@@ -51,6 +42,9 @@ namespace SLAP {
         Rx(PI() / 2.0, q0);
         Ry(-PI() / 2.0, q1);
 
+        // ResetAll([q0, q1]);
+        Reset(q0);
+        Reset(q1);
         return 0.0;
     }
 }
