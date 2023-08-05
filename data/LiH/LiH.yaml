@@ -4,15 +4,15 @@ format: {version: '0.1'}
 generator: {source: nwchem, version: '6.8'}
 integral_sets:
 - basis_set: {name: sto-3g, type: gaussian}
-  coulomb_repulsion: {units: hartree, value: 0.7124815237423424}
+  coulomb_repulsion: {units: hartree, value: 0.9970341032994531}
   energy_offset: {units: hartree, value: 0.0}
   fci_energy: {lower: 0.0, units: hartree, upper: 0.0, value: 0.0}
   geometry:
     atoms:
-    - coords: [-0.214406, 0.214406, 0.214406]
+    - coords: [0.94661325, 0.2220615, 0.69332775]
       name: H
-    - coords: [0.214406, -0.214406, -0.214406]
-      name: H
+    - coords: [-0.31553775, -0.0740205, -0.23110925]
+      name: Li
     coordinate_system: cartesian
     symmetry: c1
     units: angstrom
@@ -21,26 +21,29 @@ integral_sets:
       format: sparse
       units: hartree
       values:
-      - [1, 1, -1.2516640273]
-      - [2, 2, -0.4767774834]
+      - [1, 1, -1.4956398383]
+      - [2, 1, 0.0331099264]
+      - [1, 2, 0.0331099264]
+      - [2, 2, -1.1260698252]
     two_electron_integrals:
       format: sparse
       index_convention: mulliken
       units: hartree
       values:
-      - [1, 1, 1, 1, 0.6742360977]
-      - [2, 1, 2, 1, 0.1813629693]
-      - [2, 2, 1, 1, 0.6632381357]
-      - [2, 2, 2, 2, 0.6971501945]
+      - [1, 1, 1, 1, 0.4878484117]
+      - [2, 1, 1, 1, -0.0484485633]
+      - [2, 1, 2, 1, 0.0129866672]
+      - [2, 2, 1, 1, 0.2238319615]
+      - [2, 2, 2, 1, 0.0073819635]
+      - [2, 2, 2, 2, 0.3379636905]
   initial_state_suggestions:
   - state:
-      energy: {units: hartree, value: -1.1372541967684}
+      energy: {units: hartree, value: -7.862368138853042}
       label: '|G>'
       superposition:
-      - [0.993584134540649, (1a)+, (1b)+, '|0>']
-      - [-0.11309539154673656, (2a)+, (2b)+, (1b), (1a), (1a)+, (1b)+, '|0>']
+      - [1.0, (1a)+, (1b)+, '|0>']
   metadata: {molecule_name: unknown}
   n_electrons: 2
   n_orbitals: 2
-  scf_energy: {units: hartree, value: -1.11661043}
-  scf_energy_offset: {units: hartree, value: -0.0}
+  scf_energy: {units: hartree, value: -7.86210778}
+  scf_energy_offset: {units: hartree, value: -6.35571062}

@@ -21,11 +21,14 @@ namespace SLAP {
             ]
         );
         let JWEncodedDataParam = JordanWignerEncodingData(
-            nSpinOrbitals, fermionTermData, inputState, energyOffset
+            nSpinOrbitals, fermionTermData, inputStateParam, energyOffset
         );
         return EstimateEnergy(
             JWEncodedDataParam, nSamples
         );
+        // return EstimateEnergy(
+        //     JWEncodedData, nSamples
+        // );
     }
 
     operation Ansatz(theta : Double) : Double {
